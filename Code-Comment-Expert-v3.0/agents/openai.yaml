@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Comment Expert 代码注释专家"
+  short_description: "通读大型项目，生成导航文档并批量添加意图级代码注释"
+  default_prompt: "Use the ${skill_name} skill to handle this repeated workflow: scan the project skeleton, generate ZHIDAO.md navigation, and add intent-level comments to source files."
