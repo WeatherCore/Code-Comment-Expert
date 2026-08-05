@@ -1,0 +1,167 @@
+{
+  "project_root": "D:/1/Code-Comment-Expert222/code-comment-expert/tests/fixtures/sample-java",
+  "language_hint": "java",
+  "scan_scope": "D:/1/Code-Comment-Expert222/code-comment-expert/tests/fixtures/sample-java",
+  "total_files": 3,
+  "skipped_test_files": 1,
+  "modules": {
+    "src": [
+      "src/main/java/com/demo/payment/PaymentController.java",
+      "src/main/java/com/demo/payment/PaymentMapper.java",
+      "src/main/java/com/demo/payment/PaymentService.java"
+    ]
+  },
+  "files": [
+    {
+      "path": "src/main/java/com/demo/payment/PaymentController.java",
+      "language": "java",
+      "package": "com.demo.payment",
+      "imports": [
+        "org.springframework.web.bind.annotation.*"
+      ],
+      "classes": [
+        {
+          "name": "PaymentController",
+          "type": "class",
+          "annotations": [
+            "@RestController",
+            "@RequestMapping"
+          ],
+          "extends": "",
+          "implements": [],
+          "methods": [
+            {
+              "name": "PaymentController",
+              "signature": "public PaymentController(PaymentService paymentService)",
+              "annotations": [],
+              "line": 11
+            },
+            {
+              "name": "create",
+              "signature": "@PostMapping(         )     public PaymentResult create(@RequestBody PaymentRequest request)",
+              "annotations": [
+                "@PostMapping"
+              ],
+              "line": 15
+            }
+          ],
+          "line": 7
+        }
+      ],
+      "top_level_functions": [],
+      "referenced_types": [
+        "PaymentService"
+      ],
+      "line_count": 21,
+      "size_bytes": 479,
+      "existing_comment_ratio": 0.0
+    },
+    {
+      "path": "src/main/java/com/demo/payment/PaymentMapper.java",
+      "language": "java",
+      "package": "com.demo.payment",
+      "imports": [
+        "com.demo.payment.dto.PaymentRequest",
+        "com.demo.payment.dto.PaymentResult"
+      ],
+      "classes": [
+        {
+          "name": "PaymentMapper",
+          "type": "class",
+          "annotations": [],
+          "extends": "",
+          "implements": [],
+          "methods": [
+            {
+              "name": "findByOrderNo",
+              "signature": "public PaymentRecord findByOrderNo(String orderNo)",
+              "annotations": [],
+              "line": 7
+            }
+          ],
+          "line": 6
+        }
+      ],
+      "top_level_functions": [],
+      "referenced_types": [
+        "PaymentRequest",
+        "PaymentResult"
+      ],
+      "line_count": 15,
+      "size_bytes": 324,
+      "existing_comment_ratio": 0.071
+    },
+    {
+      "path": "src/main/java/com/demo/payment/PaymentService.java",
+      "language": "java",
+      "package": "com.demo.payment",
+      "imports": [
+        "com.demo.order.OrderService",
+        "com.demo.payment.dto.PaymentRequest",
+        "com.demo.payment.dto.PaymentResult",
+        "com.demo.gateway.PaypalGateway",
+        "org.springframework.stereotype.Service",
+        "org.springframework.transaction.annotation.Transactional"
+      ],
+      "classes": [
+        {
+          "name": "PaymentService",
+          "type": "class",
+          "annotations": [
+            "@Service"
+          ],
+          "extends": "",
+          "implements": [],
+          "methods": [
+            {
+              "name": "PaymentService",
+              "signature": "public PaymentService(PaymentMapper paymentMapper, PaypalGateway paypalGateway, OrderService orderService)",
+              "annotations": [],
+              "line": 20
+            },
+            {
+              "name": "pay",
+              "signature": "@Transactional     public PaymentResult pay(PaymentRequest request)",
+              "annotations": [
+                "@Transactional"
+              ],
+              "line": 29
+            },
+            {
+              "name": "refund",
+              "signature": "public PaymentResult refund(String orderNo, double amount)",
+              "annotations": [],
+              "line": 41
+            }
+          ],
+          "line": 14
+        }
+      ],
+      "top_level_functions": [],
+      "referenced_types": [
+        "OrderService",
+        "PaymentMapper",
+        "PaymentRequest",
+        "PaymentResult",
+        "PaypalGateway",
+        "Service",
+        "Transactional"
+      ],
+      "line_count": 46,
+      "size_bytes": 1456,
+      "existing_comment_ratio": 0.178
+    }
+  ],
+  "dependency_links": [
+    {
+      "from": "src/main/java/com/demo/payment/PaymentController.java",
+      "to": "src/main/java/com/demo/payment/PaymentService.java",
+      "kind": "type_reference"
+    },
+    {
+      "from": "src/main/java/com/demo/payment/PaymentService.java",
+      "to": "src/main/java/com/demo/payment/PaymentMapper.java",
+      "kind": "type_reference"
+    }
+  ]
+}
